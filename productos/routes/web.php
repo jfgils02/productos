@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\TipoProductoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('productos.productos');
 });
+
+Route::resource('productos', ProductoController::class);
+Route::resource('tipo_producto', TipoProductoController::class);
